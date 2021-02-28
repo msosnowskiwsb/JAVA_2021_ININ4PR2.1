@@ -15,6 +15,6 @@ public class Main {
         Phone phone2 = new Phone("NOKIA","5.1",8.2);
 
         System.out.println(human1);
-        System.out.println(human1.firstName);
+        System.out.println("Human: " + human1.firstName + " " + human1.lastName + " position: " + human1.position);
     }
 }

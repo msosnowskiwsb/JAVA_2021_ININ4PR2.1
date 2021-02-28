@@ -11,4 +11,11 @@ public class Human {
         this.position = position;
     }
 
+    @Override
+    public String toString() {
+        return "Human: " +
+                firstName +
+                ' ' + lastName +
+                ", position: " + position;
+    }
 }
