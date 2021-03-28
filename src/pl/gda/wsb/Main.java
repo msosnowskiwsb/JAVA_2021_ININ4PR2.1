@@ -70,6 +70,14 @@ public class Main {
 
         System.out.println("\n---------------------\n");
 
+        human1.setSalary(12500.0);
+
+        System.out.println("Wypłata: " + human1.getSalary());
+
+        human1.setSalary(-200.0);
+
+        System.out.println("Wypłata: " + human1.getSalary());
+
 
     }
 }
