@@ -1,5 +1,8 @@
 package pl.gda.wsb;
 
+import pl.gda.wsb.devices.Car;
+import pl.gda.wsb.devices.Phone;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -54,7 +57,7 @@ public class Main {
 
         human1.pet = animal1;
         human1.car = car1;
-        System.out.println(human1.firstName + " " + human1.lastName + " have:\ncar: " + human1.car.producer + " " + human1.car.model + "\npet: " + human1.pet.name + " (" + human1.pet.species + ")");
+        System.out.println(human1.firstName + " " + human1.lastName + " have:\ncar: " + human1.car.getProducer() + " " + human1.car.getModel() + "\npet: " + human1.pet.name + " (" + human1.pet.species + ")");
 
         System.out.println("\n---------------------\n");
 
@@ -64,5 +67,9 @@ public class Main {
         System.out.println(animal1);
         System.out.println(phone1);
         System.out.println(car1);
+
+        System.out.println("\n---------------------\n");
+
+
     }
 }

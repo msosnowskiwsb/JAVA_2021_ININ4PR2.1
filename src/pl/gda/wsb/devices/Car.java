@@ -1,4 +1,6 @@
-package pl.gda.wsb;
+package pl.gda.wsb.devices;
+
+import pl.gda.wsb.Producer;
 
 public class Car {
     final Producer producer;
@@ -14,6 +16,15 @@ public class Car {
         this.engine = engine;
         this.color = color;
     }
+
+    public Producer getProducer() {
+        return producer;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
 
     @Override
     public String toString() {
