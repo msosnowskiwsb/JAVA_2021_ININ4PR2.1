@@ -18,8 +18,8 @@ public class Main {
         Animal animal1 = new Animal("mouse", "Jerry");
         Animal animal2 = new Animal("lion", "Mufasa");
 
-        Phone phone1 = new Phone("SAMSUNG", "S10", 9.1);
-        Phone phone2 = new Phone("NOKIA", "5.1", 8.2);
+        Phone phone1 = new Phone(Producer.SAMSUNG, "S10", 2018, 12.5);
+        Phone phone2 = new Phone(Producer.NOKIA, "5.1", 2020, 13.1);
 
         Car car1 = new Car(Producer.SKODA, "OCTAVIA",2012,2.0,"black", 15800.0);
         Car car2 = new Car(Producer.TESLA, "KOLOP",2018,2.0,"yellow", 12500.0);
@@ -87,7 +87,10 @@ public class Main {
 
         human2.setCar(car2);
 
+        System.out.println("\n---------------------\n");
 
+        phone1.turnOn();
+        car1.turnOn();
 
     }
 }
