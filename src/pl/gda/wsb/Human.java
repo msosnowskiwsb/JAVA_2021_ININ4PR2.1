@@ -1,6 +1,7 @@
 package pl.gda.wsb;
 
 import pl.gda.wsb.devices.Car;
+import pl.gda.wsb.devices.Phone;
 
 import java.util.Date;
 import java.util.Objects;
@@ -11,7 +12,9 @@ public class Human {
     String position;
     private Double salary;
     Animal pet;
+    Phone phone;
     private Car car;
+    private Double cash = 15000.0;
 
     public Human(String firstName, String lastName, String position, Double salary) {
         this.firstName = firstName;
@@ -30,13 +33,21 @@ public class Human {
     }
 
     public void setCar(Car car) {
-        if (this.salary > car.getValue()){
+        if (this.salary > car.getValue()) {
             System.out.println("Super, kupiłeś auto za gotówkę" + car.toString());
             this.car = car;
-        }  else if (this.salary > 0.83*car.getValue()){
+        } else if (this.salary > 0.83 * car.getValue()) {
             System.out.println("Kupiłeś auto, ale na raty");
             this.car = car;
         } else System.out.println("Sorry, musisz zarobić więcej!");
+    }
+
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) {
+        this.cash = cash;
     }
 
     public void setSalary(Double newSalary) {
@@ -48,6 +59,29 @@ public class Human {
             System.out.println("Info do ZUS i US przekazane.\n");
             this.salary = newSalary;
         }
+    }
+
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phone) {
+        this.phone = phone;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public boolean hasCar(Car newCar) {
+        if (this.car == newCar) {
+            return true;
+        }
+        return false;
+    }
+
+    public void removeCar(){
+        this.car = null;
     }
 
     @Override

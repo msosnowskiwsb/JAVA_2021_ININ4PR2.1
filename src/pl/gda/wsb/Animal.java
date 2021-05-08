@@ -1,6 +1,6 @@
 package pl.gda.wsb;
 
-public class Animal {
+public class Animal implements Saleable {
     final String species;
     String name;
     private Double weight;
@@ -50,5 +50,22 @@ public class Animal {
                 ", name='" + name + '\'' +
                 ", weight=" + weight +
                 '}';
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (buyer.getCash() >= price){
+            if (seller.pet == this){
+                buyer.pet = this;
+                seller.pet = null;
+                buyer.setCash(buyer.getCash() - price);
+                seller.setCash(seller.getCash() + price);
+                System.out.println("\nSprzedano zwierzę: " + this.species + " " + this.name + ". Kupił: " + buyer.getLastName() + " od " + seller.getLastName() + " za " + price);
+            } else {
+                throw new Exception("Klient nie ma tego zwierzęcia");
+            }
+        } else {
+            throw new Exception("Klienta nie stać na to!");
+        }
     }
 }

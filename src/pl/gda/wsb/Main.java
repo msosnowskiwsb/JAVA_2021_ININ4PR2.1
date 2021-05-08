@@ -92,5 +92,26 @@ public class Main {
         phone1.turnOn();
         car1.turnOn();
 
+        System.out.println("\n---------------------\n");
+
+        try {
+            car1.sell(human1,human3,9800.0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        human3.setPhone(phone1);
+
+        try {
+            phone1.sell(human3,human1,850.0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            animal1.sell(human1,human4,1680.0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
